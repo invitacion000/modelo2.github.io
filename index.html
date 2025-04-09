@@ -3,43 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación de Boda | Andrea & Juan</title>
-  
- <!-- Metaetiquetas para modo oscuro y compartir -->
-<meta name="color-scheme" content="light only">
-
-
-
-
-<!-- Metaetiquetas Open Graph optimizadas para WhatsApp -->
-<meta property="og:title" content="¡Nos Casamos! | Gustavo & Alejandra">
-<meta property="og:description" content="Te invitamos a celebrar nuestro amor el 21 de septiembre de 2025. ¡Confirma tu asistencia!">
-<meta property="og:image" content="https://invitacion000.github.io/modelo2.github.io/">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://invitacion000.github.io/modelo2.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Boda Gustavo y Alejandra">
-<meta property="og:locale" content="es_ES">
-
-<!-- Metaetiquetas Twitter (opcionales pero recomendadas) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="¡Nos Casamos! | Gustavo & Alejandra">
-<meta name="twitter:description" content="Te invitamos a celebrar nuestro amor el 21 de septiembre de 2025. ¡Confirma tu asistencia!">
-<meta name="twitter:image" content="https://invitacion000.github.io/modelo2.github.io/">
-<meta name="twitter:site" content="@invitacion000">
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-
-
-<style>
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#b9a591">
+  <title>Invitación de Boda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
     :root {
       --main-color: #b9a591;
       --dark-accent: #8a7968;
       --text-color: #5a4a42;
       --gold-color: #D4AF37;
-      color-scheme: light only;
     }
 
     body, html {
@@ -49,8 +22,7 @@
       font-family: 'Great Vibes', cursive;
       color: var(--text-color);
       text-align: center;
-      background-color: white !important;
-      forced-color-adjust: none;
+      background-color: white;
     }
 
     .orientation-message {
@@ -73,7 +45,6 @@
     .main-container {
       width: 100%;
       display: block;
-      background-color: white !important;
     }
 
     .wedding-image {
@@ -93,6 +64,7 @@
     .countdown-section {
       padding: 15px 0 10px;
       margin-top: 0;
+      background-color: white;
     }
 
     .countdown-title {
@@ -131,6 +103,7 @@
 
     .audio-section {
       padding: 10px 0 30px;
+      background-color: white;
     }
 
     .audio-message {
@@ -149,7 +122,6 @@
       margin: 0;
       padding: 0;
       position: relative;
-      background-color: white !important;
     }
 
     .section-divider {
@@ -192,7 +164,7 @@
     .ceremony-section {
       padding: 30px 0;
       position: relative;
-      background-color: white !important;
+      background-color: white;
     }
 
     .ceremony-title {
@@ -220,12 +192,42 @@
       border-radius: 18px;
     }
 
-    .miVideo {
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-      display: block;
-      background-color: white !important;
+    /* Protección contra modo oscuro */
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: white !important;
+        color: #5a4a42 !important;
+      }
+      
+      img, video {
+        filter: none !important;
+        -webkit-filter: none !important;
+      }
+      
+      .ceremony-location {
+        color: black !important;
+      }
+      
+      .timer-label {
+        color: #8a7968 !important;
+      }
+      
+      .audio-message,
+      .countdown-title,
+      .ceremony-title {
+        color: #b9a591 !important;
+      }
+      
+      .ceremony-section,
+      .countdown-section,
+      .audio-section {
+        background-color: white !important;
+      }
+      
+      .ceremony-button {
+        background-color: rgba(185, 165, 145, 0.85) !important;
+        color: white !important;
+      }
     }
 
     @media (orientation: landscape) {
@@ -329,7 +331,7 @@
 
     <hr class="section-divider">
 
-    <!-- 5. Sección con video -->
+    <!-- 5. Sección con video de novios -->
     <div class="image-section">
       <video class="miVideo" width="400" muted playsinline>
         <source src="novios.mp4" type="video/mp4">
@@ -403,12 +405,12 @@
     <!-- Música -->
     <div class="ceremony-section">
       <h2 class="ceremony-title">Música</h2>
-      <img src="audio.png" alt="Ceremonia en la iglesia" class="ceremony-image" style="width: 47%;">
+      <img src="audio.png" alt="Icono de audio" class="ceremony-image" style="width: 47%;">
       <p class="ceremony-location">¿Qué canciones son infaltables?</p>
       <p class="ceremony-location">Ayúdanos con la selección de canciones</p>
       <div class="ceremony-buttons">
         <button onclick="window.location.href='https://maps.app.goo.gl/d2HTkD6xfzz4GrFT8'" class="ceremony-button">
-         Sugerir Canción
+          Sugerir Canción
         </button>
       </div>
     </div>
@@ -429,9 +431,6 @@
   </div>
 
   <script>
-    // Fuerza modo claro al cargar
-    document.documentElement.style.setProperty('color-scheme', 'light only');
-
     // Verificación de imágenes
     document.querySelectorAll('.wedding-image, .ceremony-image').forEach(img => {
       img.onerror = function() {
@@ -465,12 +464,10 @@
       audio.play().catch(e => console.log("Reproducción automática no permitida"));
     }, { once: true });
 
-    // Scroll video 
+    // Control de videos
     const videos = document.querySelectorAll('.miVideo');
-
     videos.forEach(video => {
       let visible = false;
-
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.target === video) {
@@ -479,14 +476,12 @@
               video.play();
               visible = true;
             } else if (!entry.isIntersecting && visible) {
+              video.pause();
               visible = false;
             }
           }
         });
-      }, {
-        threshold: 0.5
-      });
-
+      }, { threshold: 0.5 });
       observer.observe(video);
     });
   </script>
