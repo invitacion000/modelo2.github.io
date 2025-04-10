@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#b9a591">
   <title>Invitación de Boda</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -54,6 +52,7 @@
       padding: 0;
     }
 
+    /* Nuevo estilo para imágenes reducidas */
     .ceremony-image {
       width: 80%;
       max-width: 400px;
@@ -64,7 +63,6 @@
     .countdown-section {
       padding: 15px 0 10px;
       margin-top: 0;
-      background-color: white;
     }
 
     .countdown-title {
@@ -103,7 +101,6 @@
 
     .audio-section {
       padding: 10px 0 30px;
-      background-color: white;
     }
 
     .audio-message {
@@ -131,6 +128,7 @@
       border: none;
     }
 
+    /* Estilos para los botones de ceremonia */
     .ceremony-buttons {
       display: flex;
       justify-content: center;
@@ -161,16 +159,17 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
+    /* Nuevos estilos para la sección de ceremonia */
     .ceremony-section {
       padding: 30px 0;
       position: relative;
-      background-color: white;
     }
 
     .ceremony-title {
-      font-size: 2.5rem;
-      color: var(--main-color);
-      letter-spacing: 1px;
+      font-size: 2.5rem; /* igual que .countdown-title */
+      color: var(--main-color); /* igual que .countdown-title */
+      letter-spacing: 1px; /* igual que .countdown-title */
+      font-family: 'Montserrat', sans-serif; /* igual que .countdown-title */
       font-family: 'Great Vibes', cursive;
       margin: 20px 0 5px;
     }
@@ -189,45 +188,8 @@
     audio {
       width: 100%;
       height: 36px;
+      /* border: 1px solid #e0e0e0; */
       border-radius: 18px;
-    }
-
-    /* Protección contra modo oscuro */
-    @media (prefers-color-scheme: dark) {
-      body, html {
-        background-color: white !important;
-        color: #5a4a42 !important;
-      }
-      
-      img, video {
-        filter: none !important;
-        -webkit-filter: none !important;
-      }
-      
-      .ceremony-location {
-        color: black !important;
-      }
-      
-      .timer-label {
-        color: #8a7968 !important;
-      }
-      
-      .audio-message,
-      .countdown-title,
-      .ceremony-title {
-        color: #b9a591 !important;
-      }
-      
-      .ceremony-section,
-      .countdown-section,
-      .audio-section {
-        background-color: white !important;
-      }
-      
-      .ceremony-button {
-        background-color: rgba(185, 165, 145, 0.85) !important;
-        color: white !important;
-      }
     }
 
     @media (orientation: landscape) {
@@ -331,8 +293,14 @@
 
     <hr class="section-divider">
 
-    <!-- 5. Sección con video de novios -->
+    <!-- 5. Sección con imagen 3 -->
+    <!-- <div class="image-section">
+      <img src="novios.jpg" alt="Información adicional" class="wedding-image">
+    </div> -->
     <div class="image-section">
+      <!-- <video id="miVideo" width="400" muted playsinline>
+        <source src="novios.mp4" type="video/mp4">
+      </video> -->
       <video class="miVideo" width="400" muted playsinline>
         <source src="novios.mp4" type="video/mp4">
       </video>
@@ -347,7 +315,7 @@
 
     <hr class="section-divider">
 
-    <!-- Sección de ceremonia -->
+    <!-- Nueva sección de ceremonia -->
     <div class="ceremony-section">
       <!-- Iglesia -->
       <img src="iglesia.png" alt="Ceremonia en la iglesia" class="ceremony-image">
@@ -355,9 +323,11 @@
       <p class="ceremony-location">Iglesia Obrero</p>
       <div class="ceremony-buttons">
         <button class="ceremony-button">17:00</button>
+        <!-- <button onclick="https://maps.app.goo.gl/d2HTkD6xfzz4GrFT8"  class="ceremony-button">Ver Ubicación</button> -->
         <button onclick="window.location.href='https://maps.app.goo.gl/d2HTkD6xfzz4GrFT8'" class="ceremony-button">
           Ver Ubicación
         </button>
+
       </div>
 
       <div class="spacer"></div>
@@ -369,65 +339,84 @@
       <p class="ceremony-location">La finca</p>
       <div class="ceremony-buttons">
         <button class="ceremony-button">20:00</button>
+        <!-- <button onclick="" class="ceremony-button">Ver Ubicación</button> -->
         <button onclick="window.location.href='https://maps.app.goo.gl/B6EyD7y9mWjh4VJ26'" class="ceremony-button">
           Ver Ubicación
         </button>
       </div>
     </div>
 
-    <!-- Cronograma -->
+    <!-- <hr class="section-divider"> -->
+         <!--cronograma -->
     <div class="image-section">
+      <!-- <img src="cronograma.jpg" alt="Eventos de la boda" class="wedding-image"> -->
+      <!-- <img id="miGif" data-src="cronograma.gif" alt="Eventos de la boda" class="wedding-image"/> -->
+      <!-- <video id="miVideo" width="400" muted playsinline>
+        <source src="cronograma.mp4" type="video/mp4">
+      </video> -->
       <video class="miVideo" width="400" muted playsinline>
         <source src="cronograma.mp4" type="video/mp4">
       </video>
     </div>
 
-    <!-- Confirmación de asistencia -->
-    <div class="ceremony-section">
-      <h2 class="ceremony-title">Confirmar Asistencia</h2>
-      <p class="ceremony-location">Aunque nos gustan los niños, será una celebración solo para adultos.</p>
-      <p class="ceremony-location">Favor de confirmar tu presencia, más tardar el 1 de septiembre.</p>
-      <p class="ceremony-location">¡Muchas Gracias!</p>
-      <div class="ceremony-buttons">
-        <button onclick="window.location.href='https://forms.gle/g2Ai9Q47rA4bAqt96'" class="ceremony-button">
-          Confirmar Aquí
-        </button>
-      </div>
-    </div>
+        <!-- Nueva sección de ceremonia -->
+        <div class="ceremony-section">
+          <!-- Iglesia -->
+          <!-- <img src="iglesia.png" alt="Ceremonia en la iglesia" class="ceremony-image"> -->
+          <h2 class="ceremony-title">Confirmar Asistencia</h2>
+          <p class="ceremony-location">Aunque nos gustan los niños, será una celebración solo para adultos.</p>
+          <p class="ceremony-location">Favor de confirmar tu presencia, más tardar el 1 de sepriembre.</p>
+          <p class="ceremony-location">¡Muchas Gracias!</p>
+          <div class="ceremony-buttons">
+            <!-- <button onclick="https://maps.app.goo.gl/d2HTkD6xfzz4GrFT8"  class="ceremony-button">Ver Ubicación</button> -->
+            <button onclick="window.location.href='https://forms.gle/g2Ai9Q47rA4bAqt96'" class="ceremony-button">
+            Confrimar Aquí
+            </button>
 
-    <!-- Código de vestimenta -->
+          </div>
+
+        </div>
+          <!-- <hr class="section-divider"> -->
+    <!--cronograma -->
     <div class="image-section">
+      <!-- <img src="codigovestimenta.jpg" alt="Eventos de la boda" class="wedding-image"> -->
       <video class="miVideo" width="400" muted playsinline>
         <source src="vestimenta.mp4" type="video/mp4">
       </video>
     </div>
 
-    <!-- Música -->
-    <div class="ceremony-section">
+
+     <!-- Nueva sección de ceremonia -->
+     <div class="ceremony-section">
+      <!-- Iglesia -->
       <h2 class="ceremony-title">Música</h2>
-      <img src="audio.png" alt="Icono de audio" class="ceremony-image" style="width: 47%;">
+      <img src="audio.png" alt="Ceremonia en la iglesia" class="ceremony-image" style="width: 47%;">
+
       <p class="ceremony-location">¿Qué canciones son infaltables?</p>
       <p class="ceremony-location">Ayúdanos con la selección de canciones</p>
       <div class="ceremony-buttons">
+        <!-- <button onclick="https://maps.app.goo.gl/d2HTkD6xfzz4GrFT8"  class="ceremony-button">Ver Ubicación</button> -->
         <button onclick="window.location.href='https://maps.app.goo.gl/d2HTkD6xfzz4GrFT8'" class="ceremony-button">
-          Sugerir Canción
+         Sugerir Canción
         </button>
+
       </div>
     </div>
 
-    <!-- Regalos -->
     <div class="image-section">
+      <!-- <img src="regalos.jpg" alt="Eventos de la boda" class="wedding-image"> -->
       <video class="miVideo" width="400" muted playsinline>
         <source src="regalo.mp4" type="video/mp4">
       </video>
     </div>
 
-    <!-- Final -->
     <div class="image-section">
+      <!-- <img src="final.jpg" alt="Eventos de la boda" class="wedding-image"> -->
       <video class="miVideo" width="400" muted playsinline>
         <source src="final.mp4" type="video/mp4">
       </video>
     </div>
+
   </div>
 
   <script>
@@ -440,20 +429,21 @@
     });
 
     function updateCountdown() {
-      const weddingDate = new Date("September 21, 2025 00:00:00").getTime();
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
+  const weddingDate = new Date("September 21, 2025 00:00:00").getTime();
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById('days').textContent = days.toString().padStart(2, '0');
-      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-    }
+  // Actualizar los elementos HTML
+  document.getElementById('days').textContent = days.toString().padStart(2, '0');
+  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+  document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
@@ -464,26 +454,55 @@
       audio.play().catch(e => console.log("Reproducción automática no permitida"));
     }, { once: true });
 
-    // Control de videos
-    const videos = document.querySelectorAll('.miVideo');
-    videos.forEach(video => {
-      let visible = false;
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.target === video) {
-            if (entry.isIntersecting && !visible) {
-              video.currentTime = 0;
-              video.play();
-              visible = true;
-            } else if (!entry.isIntersecting && visible) {
-              video.pause();
-              visible = false;
-            }
-          }
-        });
-      }, { threshold: 0.5 });
-      observer.observe(video);
+    // Funcionalidad para los botones de ceremonia
+    document.querySelectorAll('.ceremony-button').forEach(button => {
+      button.addEventListener('click', function() {
+        const buttonText = this.textContent;
+        const location = this.closest('.ceremony-section').querySelector('.ceremony-location').textContent;
+
+        switch(buttonText) {
+          case 'Ubicación':
+            alert('Mostrar ubicación de: ' + location);
+            break;
+          case 'Hora':
+            alert('Mostrar hora para: ' + location);
+            break;
+          case 'Mapa':
+            alert('Mostrar mapa de: ' + location);
+            break;
+          case 'Detalles':
+            alert('Mostrar detalles de: ' + location);
+            break;
+        }
+      });
     });
+
+    // scroll video 
+    const videos = document.querySelectorAll('.miVideo'); // ahora seleccionás por clase
+
+  videos.forEach(video => {
+    let visible = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === video) {
+          if (entry.isIntersecting && !visible) {
+            video.currentTime = 0;
+            video.play();
+            visible = true;
+          } else if (!entry.isIntersecting && visible) {
+            visible = false;
+          }
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    observer.observe(video);
+  });
+
+
   </script>
 </body>
 </html>
